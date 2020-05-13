@@ -4,17 +4,21 @@
   <div class="row">
     <% @flats.each do |flat| %>
     <div class="col-4">
-      <div class="card mb-3">
+      <div class="card mb-3 text-center">
         <div class="card-image">
           <%= flat.name  %>
+          <%= flat.id  %>
         </div>
 
         <div class="card-content">
-          <%= flat.address %>
+         <h5>💸<%= flat.price_per_night %></h5>
+         <p> 🛌: <%= flat.bedrooms %> / 🛀: <%= flat.bathrooms %> </p>
         </div>
 
-        <div class="card-actions">
-          <p> Bed: <%= flat.bedrooms %> / Bath: <%= flat.bathrooms %> </p>
+        <div class="card-actions text-center">
+           <%= link_to '👀', flat_path(flat) %>
+           <%= link_to '✍️', edit_flat_path(flat) %>
+           <%= link_to '🗑', flat_path(flat), method: :delete %>
         </div>
       </div>
     </div>
