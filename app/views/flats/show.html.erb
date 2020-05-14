@@ -7,7 +7,7 @@
       </div>
 
       <div class="card-content">
-        <h5>💸<%= @flat.price_per_night %></h5>
+        <h5><%= number_to_currency(@flat.price_per_night, percision: 0) %></h5>
         <p> 🛌: <%= @flat.bedrooms %> / 🛀: <%= @flat.bathrooms %> </p>
       </div>
 

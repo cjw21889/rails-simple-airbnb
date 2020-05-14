@@ -5,6 +5,10 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
+  def top
+    @flats = Flat.order(price_per_night: :DESC).limit(5)
+  end
+
   def show
   end
 
